@@ -1,0 +1,572 @@
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="../styles/tailwind.css" rel="stylesheet" type="text/css" />
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- DATE RANGE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/themes/dark.css">
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+
+    />
+    <!-- Global -->
+    <link href="../styles/tailwind.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/105.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body >
+    <!-- TOPNAV -->
+    <div class="topnav">
+        <div class="p-4 text-white flex flex-row top-menu">
+              <div class="mr-auto ml-10">
+                <a class="pr-10" href="index.html">Home</a>
+
+                <a class="web-pill-active" href="index.html">Website1</a>
+                <a class="web-pill" href="index.html">Website2</a>
+              </div>
+              <div class="ml-auto space-x-10 mr-10">
+                <a href="index.html">Logout</a>
+              </div>
+        </div>
+        <hr class="topnav-line">
+      </div>
+    
+    <!-- PAGE CONTENT -->
+    <div class="page-content flex flex-row" style="width: 1850px;">
+      
+      <!-- SIDENAV -->
+      <div class="sidenav" >
+        <a href="#dashboard">Dashboard</a>
+        <a href="#about">งานใหม่</a>
+
+        <button class="dropdown-btn justify-center text-center">จัดการสมาชิก 
+          <span class="float-right">
+            <i class="fa fa-caret-down "></i>
+          </span>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">สมาชิก</a>
+            <a href="#">ระดับสมาชิก</a>
+            <a href="#">พนักงาน</a>
+        </div>
+        <a href="#services">โปรโมชั่น</a>
+
+        <button class="dropdown-btn active" style="background-color: #334350; border-radius: 0;">ประวัติ <span class="float-right"></span>
+            <i class="fa fa-caret-down "></i>
+        </button>
+        <div class="dropdown-container" style="display: block;">
+            <a href="../history/deposit.html" >การฝาก</a>
+            <a href="../history/withdrawal.html">การถอน</a>
+            <a href="../history/register.html">การสมัคร</a>
+            <a href="../history/topup.html" style="color: #ddd;">การเติมเครดิต</a>
+            <a href="../history/transfer.html">การโยกย้ายเครดิต</a>
+            <a href="../history/message.html">ข้อความ SMS</a>
+            <a href="../history/usage.html">การใช้งาน</a>
+        </div>
+
+        <button class="dropdown-btn">ธนาคาร <span class="float-right"></span>
+            <i class="fa fa-caret-down "></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="../bank/income.html">เงินเข้า</a>
+          <a href="../bank/outcome.html">เงินออก</a>
+          <a href="../bank/timeline.html">Timeline การเงิน</a>
+          <a href="../bank/bookbank.html">บัญชีธนาคาร</a>
+        </div>
+        
+        <a href="#contact">Report</a>
+        <a href="#contact">ตั้งค่า</a>
+        <a href="blankpage.html">Test</a>
+    </div>
+      <div class="ml-10 mt-4">
+        <span class="text-white text-xl">ประวัติ / </span>
+        <span class="text-white font-bold text-2xl">การเติมเครดิต</span>
+        
+        <div
+          class="flex flex-col inner-content mt-3"
+          style="height: auto"
+        >
+          <div class="pt-5 pl-5 flex flex-col">
+            <div class="flex flex-row ">
+              <!-- DATE RANGE -->
+              <div>
+                <p class="ml-1 " style="color: #ddd;">เลือกวันที่</p>
+                <div class="dtr-container mt-0.5 " >
+                  <input class="dtr dtr-icon"  type="text" id="rangeDate" placeholder="Please select Date Range" data-input>
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                </div>
+                
+
+              </div>
+              
+              <div class="space">
+                <!-- narrow width -->
+                <p class="ml-1 " style="color: #ddd;">เลือกแบบด่วน</p>
+                <!-- Dropdown -->
+                <div class=" m-0.5" >
+                  <div class="show-container">
+                    <select name="#" id="maxRows" class="" style="width: 80px;" >
+                      <option >&nbsp; วันนี้</option>
+                      <option >&nbsp; เมื่อวาน</option>
+                      <option >&nbsp; อาทิตย์นี้</option>
+                      <option >&nbsp; อาทิตย์ที่แล้ว</option>
+                      <option >&nbsp; เดือนนี้</option>
+                      <option >&nbsp; เดือนที่แล้ว</option>
+                      
+                    </select>
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </div>
+                  
+                </div>
+              </div>
+              
+              <div class="space">
+                <p class="ml-1 " style="color: #ddd;">Filter</p>
+                  <div class="input-group m-0.5" id="boot-search-box">
+                      <div class="input-group-btn">
+                          <div class="btn-group" role="group">
+                              <div class="dropdown dropdown-lg">
+                                <button type="button" class="btn dropdown-toggle show-container flex flex-row" data-toggle="dropdown" aria-expanded="false" style="width: 150px;">
+                                  
+                                  <span class="ml-2 flex flex-row">Filter<span class="ml-16"><svg class="justify-center text-center ml-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></span></span>
+
+                                </button>
+                                  <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                      <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                          <label for="filter">สถานะ</label>
+                                          <select class="form-control">
+                                              <option value="#" selected>ทั้งหมด</option>
+                                              <option value="#">สำเร็จ</option>
+                                              <option value="#">ไม่สำเร็จ</option>
+                                              <option value="#">รอดำเนินการ</option>
+                                          </select>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="filter">ประเภท</label>
+                                          <select class="form-control">
+                                              <option value="#" selected>ทั้งหมด</option>
+                                              <option value="#">กิจกรรม</option>
+                                              <option value="#">อื่นๆ</option>
+                                          </select>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="filter">กิจกรรม</label>
+                                          <select class="form-control">
+                                              <option value="#" selected>ทั้งหมด</option>
+                                              <option value="#">Event1</option>
+                                              <option value="#">Event2</option>
+                                              <option value="#">Event3</option>
+
+                                          </select>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="filter">กระเป๋า</label>
+                                          <select class="form-control">
+                                              <option value="#" selected>ทั้งหมด</option>
+                                              <option value="#">กระเป๋าหลัก</option>
+                                              <option value="#">กระเป๋าโบนัส</option>
+
+                                          </select>
+                                        </div>
+                                          <div class="form-group">
+                                            <label for="filter">พนักงาน</label>
+                                            <select class="form-control">
+                                                <option value="#" selected>ทั้งหมด</option>
+                                                <option value="#">รายชื่อพนักงาน</option>
+                                                <option value="#">#</option>
+                                            </select>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="password1" class="control-label">จำนวนเงิน</label>
+                                          <div class="">
+                                            <input type="text" class="form-control" id="min-price" placeholder="Min">
+                                            <input type="text" class="form-control" id="max-price" placeholder="Max">
+
+                                          </div>                    
+                                          </div>
+                                        
+                                        <button class=" submit">ตกลง</button>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+
+              <div class="space">
+                <p class="ml-1 " style="color: #ddd;">&nbsp;</p>
+                <div class=" m-0.5 " >
+                  <button class="submit">ยืนยัน</button>
+                </div>
+                
+
+              </div>
+
+              <div class="ml-auto search flex flex-col mr-7 mr-custom">
+                <p class="ml-1" style="color: #ddd">ค้นหาจากฐานข้อมูล</p>
+                <div class="input-group m-0.5" id="boot-search-box">
+                  <div class="input-group-btn">
+                      <div class="btn-group" role="group">
+                          <div class="dropdown dropdown-lg">
+                            <button type="button" class="btn dropdown-toggle show-container flex flex-row" data-toggle="dropdown" aria-expanded="false" style="width: 150px;">
+                                  
+                              <span class="ml-2 flex flex-row">Filter<span class="ml-16"><svg class="justify-center text-center ml-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></span></span>
+
+                            </button>
+                              <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                
+                                  <form class="form-horizontal" role="form">
+                                    <label for="filter">ค้นหาจาก</label>
+                                    <div class="search-dropdown-filter">
+                                      <input class="text-left " style="width: 200px;" type="text" placeholder=" ชื่อผู้ใช้, เบอร์โทร, รหัสสมาชิก " />
+                                    </div>
+                                    <div class="search-dropdown-filter">
+                                      <input class="text-left " style="width: 200px;" type="text" placeholder=" รหัสรายการ " />
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="filter">สถานะ</label>
+                                      <select class="form-control">
+                                          <option value="#" selected>ทั้งหมด</option>
+                                          <option value="#">สำเร็จ</option>
+                                          <option value="#">ไม่สำเร็จ</option>
+                                          <option value="#">รอดำเนินการ</option>
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="filter">พนักงาน</label>
+                                      <select class="form-control">
+                                          <option value="#" selected>ทั้งหมด</option>
+                                          <option value="#">รายชื่อพนักงาน</option>
+                                          <option value="#">#</option>
+                                      </select>
+                                    </div>
+                                    <label for="filter">เลือกวันที่</label>
+                                    <div  class="dtr-container-filter m-0.5">
+                                      <input class="dtr-filter" id="rangeDate1" type="text" placeholder="Please select Date Range" data-input>
+                                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="password1" class="control-label">จำนวนเงิน</label>
+                                    <div class="">
+                                      <input type="text" class="form-control" id="min-price" placeholder="Min">
+                                      <input type="text" class="form-control" id="max-price" placeholder="Max">
+                                    </div>                    
+                                    </div>
+                                    <div class="ml-auto">
+                                      <button class="mt-0.5 submit">ค้นหา</button>
+                                    </div>
+                                    
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+
+            </div>
+            
+          </div>
+
+  
+          <div  class="base flex flex-col">
+            
+            <div class="flex flex-row" style="color: #ddd;">
+              <!-- Select Rows -->
+              
+              <div class="flex flex-col ml-5 " >
+                
+                <p class="no-row subnav-head ml-1">แสดง</p>
+                <div class="form-group flex flex-row" >
+                  
+                  <div class="show-container">
+                    <select name="state" id="maxRows" class="" style="width: auto;" >
+                      <!-- default = 50 -->
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                      
+                      </select>
+                      <i class="fa fa-angle-down select-icon" aria-hidden="true"></i>
+                  </div>
+                  
+                  <!-- <p class="ml-5 subnav">รวมทั้งหมด <span class="number" >7</span> | รายการ จำนวนเงิน <span class="number">100,000,299</span> บาท | <span class="number">xx</span> user</p> -->
+
+                  
+                </div>
+                
+              </div>
+              
+              <div class="ml-auto flex flex-col mr-7">
+                <span class="subnav-head ml-1" style="color: #ddd;">ค้นหาจากตาราง</span>
+                <div class="flex flex-row">
+                  <div class="search-container">
+                    <input class="text-left" style="width: 250px;" type="text" placeholder=" รหัสรายการ, ชื่อผู้ใช้, เบอร์โทร, รหัสสมาชิก " />
+                    <span class="fa fa-search"></span>
+                  </div>
+                  
+                  <button class="ml-2 submit">ยืนยัน</button>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+            
+          <!-- Table -->
+          <div class="flex ml-5 tabular mr-5">
+            
+            <table id="mytable" class="table">
+              <thead class="justify-center text-left">
+                <tr class="bg-blue-custom text-center justify-center">
+                  <th style="width: 100px;">สร้างเมื่อ</th>
+                  <th style="width: 180px;">ชื่อผู้ใช้งาน</th>
+                  <th style="width: 90px;">ประเภท</th>
+                  <th style="width: 90px;">กิจกรรม</th>
+                  <th style="width: 100px;">กระเป๋า</th>
+                  <th style="width: 110px;">จำนวนเงิน</th>
+                  <th style="width: 60px;">รูปภาพ</th>
+                  <th style="width: 200px;">หมายเหตุ</th>
+                  <th style="width: 90px;">พนักงาน</th>
+                </tr>
+              </thead>
+  
+              <tbody>
+                <tr >
+                  <td>2021-03-24<br> 12:00:39</td>
+                  <td>[ระดับสมาชิก] [รหัสสมาชิก] <br /><span style="color: #f77e56;">kkkk</span> <br />0123456789</td>
+                  <td >กิจกรรม</td>
+                  <td>Event1</td>
+                  <td>กระเป๋าโบนัส</td>
+                  <td class="number">1000.00</td>
+                  <td>
+                    <a href="img.html" target="_blank" onClick="mypopup()">
+                      <img
+                      class="zoom"
+                      src="../img/test/kbankslip.png"
+                      style="width: 40px"
+                      />
+                    </a>
+                  </td>
+                  <td>-</td>
+                  <td>qwertyasdfg</td>
+                </tr>
+  
+                <tr >
+                  <td>2021-03-24<br> 12:00:39</td>
+                  <td>[ระดับสมาชิก] [รหัสสมาชิก] <br /><span style="color: #f77e56;">kkkk</span> <br />0123456789</td>
+                  <td >อื่นๆ</td>
+                  <td>Event2</td>
+                  <td>กระเป๋าหลัก</td>
+                  <td class="number">500.00</td>
+                  <td>
+                    <a href="img.html" target="_blank" onClick="mypopup()">
+                      <img
+                      class="zoom"
+                      src="../img/test/kbankslip.png"
+                      style="width: 40px"
+                      />
+                    </a>
+                  </td>
+                  <td>-</td>
+                  <td>qwertyasdfg</td>
+                  
+                </tr>
+                
+                <tr >
+                    <td>2021-03-24<br> 12:00:39</td>
+                    <td>[ระดับสมาชิก] [รหัสสมาชิก] <br /><span style="color: #f77e56;">kkkk</span> <br />0123456789</td>
+                    <td >กิจกรรม</td>
+                    <td>Event3</td>
+                    <td>กระเป๋าโบนัส</td>
+                    <td class="number-wd">-2000.00</td>
+                    <td>
+                        <a href="img.html" target="_blank" onClick="mypopup()">
+                          <img
+                          class="zoom"
+                          src="../img/test/kbankslip.png"
+                          style="width: 40px"
+                          />
+                        </a>
+                      </td>
+                    <td>เครดิตหาย</td>
+                    <td>qwertyasdfg</td>
+                    
+                  </tr>
+                
+
+                <!-- footer -->
+                <!-- <tfoot>
+                  <td colspan="3" class="text-right">รวมยอดเงิน</td>
+                  <td style="color: #61c36c">100,000,299</td>
+                  <td></td> 
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  
+                  
+                </tfoot> -->
+              </tbody>
+            </table>
+            
+          </div>
+          <!-- Pagination -->
+          <div class="ml-auto" >
+            <div class="pagination-container  pageno " >
+              <nav>
+                <ul class="space-x-10 flex flex-row pagination each-num">
+                  
+                </ul>
+              </nav>
+            </div>
+          </div>
+          
+        </div >
+      </div>
+
+      <!--  -->
+    </div>
+  </body>
+</html>
+
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--  Flatpickr  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+
+<script>
+$("#rangeDate").flatpickr({
+    mode: 'range',
+    dateFormat: "Y-m-d",
+     "locale": {
+        "firstDayOfWeek": 1 // start week on Monday
+    },
+    defaultDate: ["today", "today"],
+    // default today
+});
+</script>
+<script>
+  $("#rangeDate1").flatpickr({
+      mode: 'range',
+      dateFormat: "Y-m-d",
+       "locale": {
+          "firstDayOfWeek": 1 // start week on Monday
+      },
+      defaultDate: ["today", "today"],
+      // default today
+  });
+</script>
+
+<!-- Pagination -->
+<script>
+  var table = "#mytable"
+  $('#maxRows').on('change', function(){
+    $('.pagination').html('')
+    var trnum = 0
+    var maxRows = parseInt($(this).val())
+    var totalRows = $(table+' tbody tr').length
+    $(table+' tr:gt(0)').each(function(){
+      trnum++
+      if(trnum > maxRows){
+        $(this).hide()
+      }
+      if(trnum <= maxRows){
+        $(this).show()
+      }
+    })
+    if(totalRows > maxRows){
+      var pagenum = Math.ceil(totalRows/maxRows)
+      for(var i=1; i<=pagenum;){
+        $('.pagination').append('<li data-page="'+i+'">\<span>'+ i++ +'<span class="sr-only">(current)</span></span>\</li>').show()
+      }
+    }
+    $('.pagination li:first-child').addClass('active-li')
+    $('.pagination li').on('click', function(){
+      var pageNum = $(this).attr('data-page')
+      var trIndex = 0;
+      $('.pagination li').removeClass('active-li')
+      $(this).addClass('active-li')
+      $(table+' tr:gt(0)').each(function(){
+        trIndex++
+        if(trIndex > (maxRows*pageNum) || trIndex <= ((maxRows*pageNum)-maxRows)){
+          $(this).hide()
+        }else{
+          $(this).show()
+        }
+      })
+    })
+  })
+  $(function(){
+    $('table tr:eq(0)').prepend('<th>รหัสรายการ</th>')
+    var id = 0;
+    var str =  "T00000000";
+    $('table > tbody > tr').each(function(){
+      id++
+      $(this).prepend('<td class="font-bold" style="background-color: #ff782a; width: 100px;">'+str+id+'<div class="text-center"><button href="#" class="copy-id "><i class="fa fa-files-o" aria-hidden="true"></i></button></div>'+'</td>')
+    })
+  })
+</script>
+<script>
+  function mypopup(){
+  var viewportwidth = document.documentElement.clientWidth;
+  var viewportheight = 600;
+  window.resizeBy(-300,0);
+  window.moveTo(0,0);
+
+  window.open("img.html",
+              "mywindow",
+              "width=400, height=600, left="+(viewportwidth-300)+",top=0");
+  }
+</script>
+<!-- Icon clickable -->
+<script>
+  $(function() {
+    $('select').selectmenu();
+  });
+</script>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>

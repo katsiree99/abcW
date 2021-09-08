@@ -1,0 +1,138 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link href="../styles/tailwind.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/index.css" rel="stylesheet" type="text/css" />
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- DATE RANGE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/themes/dark.css">
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <link href="../styles/104.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!-- TOPNAV -->
+    <div class="topnav">
+      <div class="p-4 text-white flex flex-row top-menu">
+            <div class="mr-auto ml-10">
+              <a class="pr-10" href="index.html">Home</a>
+
+              <a class="web-pill-active" href="index.html">Website1</a>
+              <a class="web-pill" href="index.html">Website2</a>
+            </div>
+            <div class="ml-auto space-x-10 mr-10">
+              <a href="index.html">Logout</a>
+            </div>
+      </div>
+      <hr class="topnav-line">
+    </div>
+    <!-- SIDENAV -->
+    <!-- TODO : non sticky sidebar -->
+    
+    </div>
+    
+    <!-- PAGE CONTENT -->
+    <div class="page-content flex flex-row">
+      <div class="sidenav" >
+        <a href="#dashboard">Dashboard</a>
+        <a href="#about">งานใหม่</a>
+
+        <button class="dropdown-btn">จัดการสมาชิก <span class="float-right">+</span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">สมาชิก</a>
+            <a href="#">ระดับสมาชิก</a>
+            <a href="#">พนักงาน</a>
+        </div>
+        <a href="#services">โปรโมชั่น</a>
+
+        <button class="dropdown-btn active">ประวัติ <span class="float-right">+</span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="deposit.html">การฝาก</a>
+            <a href="#">การถอน</a>
+            <a href="#">การสมัคร</a>
+            <a href="#">การเติมเครดิต</a>
+            <a href="#">การโยกย้ายเครดิต</a>
+            <a href="#">ข้อความ SMS</a>
+            <a href="#">การใช้งาน</a>
+        </div>
+
+        <button class="dropdown-btn">ธนาคาร <span class="float-right">+</span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">เงินเข้า</a>
+            <a href="#">เงินออก</a>
+            <a href="#">Timeline การเงิน</a>
+            <a href="#">บัญชีธนาคาร</a>
+        </div>
+        
+        <a href="#contact">Report</a>
+        <a href="#contact">ตั้งค่า</a>
+        <a href="blankpage.html">Test</a>
+    </div>
+      <div class="ml-10 mt-4">
+        
+        <div
+          class="flex flex-col inner-content"
+          style="width: 1720px; height: 1100px;" 
+        >
+        <!-- HEIGHT 1100PX -->
+        </div>
+      </div>
+
+      <!--  -->
+    </div>
+  </body>
+</html>
+
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+

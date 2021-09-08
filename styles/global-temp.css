@@ -1,0 +1,244 @@
+html, body{
+  font-family: 'Kanit', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  background-color: #0A0C17;
+}
+
+.sidenav {
+  height: auto;
+  min-width: 200px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #070A17;
+  /* overflow-x: auto; */
+  padding-top: 20px;
+  border-right: 1px #818181 solid;
+  /*border-top: 1px #818181 solid;*/
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn, .sidenav button {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 14px;
+color: #506690;
+display: block;
+border-right: none;
+background: none;
+width:100%;
+text-align: left;
+cursor: pointer;
+outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover, .sidenav button:hover {
+color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+margin-left: 200px; /* Same as the width of the sidenav */
+font-size: 20px; /* Increased text to enable scrolling */
+padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+background-color: #151C27;
+color: white!important;
+border-radius: 4px;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+display: none;
+background-color: #070A17;
+padding-left: 8px;
+}
+
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+float: right;
+padding-right: 8px;
+}
+
+/* TOPNAV */
+.topnav-line{
+  overflow-x: auto;
+  width: auto;
+}
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+/* PAGE CONTENT */
+.page-content{
+  /* margin-top: 4em; */
+
+  width: auto;
+  
+}
+
+.inner-content{
+  background-color: #212E43;
+  border-radius: 10px;
+}
+
+
+/* TABLE */
+table, th, td{
+    border: 1px solid gray;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+tr:nth-child(even) {
+    background-color: #131c28;
+  }
+
+.bg-blue-custom{
+    background-color: #1A2941;
+}
+
+.zoom:hover{
+    transform: scale(7.0);
+}
+
+.tag {
+    font-size: 10px;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.is-info {
+    background-color: #EAC243;
+}
+
+.is-danger {
+    background-color: #EB4C64;
+}
+
+.is-success {
+    background-color: #61C36C;
+}
+
+.is-none{
+    background-color: white;
+}
+
+.button{
+    border-radius: 4px;
+    padding: 2px;
+}
+
+/* pagination */
+.pageno{
+  padding-right: 375px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.active-li{
+  display: block;
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+
+  -moz-border-radius: 30px; /* or 50% */
+  border-radius: 30px; /* or 50% */
+
+  background-color: #4765E6;
+  color: white!important;
+  text-align: center;
+}
+
+.each-num > li{
+  line-height: 35px;
+  color: #ddd;
+}
+
+/* Date range */
+input {
+  border: 1px solid #1b2e4b;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  background: #101722;
+  color: #ddd;
+}
+
+
+.dtr{
+  background-color: #101722;
+  border: 1px solid #1b2e4b;
+}
+
+.dtr::placeholder{
+  color: #ddd;
+  opacity: 1;
+}
+
+input::placeholder {
+  color: #ddd;
+  opacity: 1;
+}
+
+select{
+  -webkit-appearance: none;
+  border: 1px solid #1b2e4b;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  background: #101722;
+  color: #ddd;
+  line-height: 20px;
+}
+
+select:hover{
+  cursor: pointer;
+}
+
+.base{
+  line-height: 20px;
+}
+
+/* button */
+.submit{
+  background-color: #4361ee;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Website pills */
+.web-pill{
+  background-color: #191e3a;
+  color: #25d5e4!important;
+  border-color: transparent;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+}
+
+.top-menu a{
+  color: #506690;
+}
+
+.top-menu a:hover{
+  color: #f1f1f1;
+}
+
+.topnav{
+  width: 2000px;
+}
+
+.topnav-line{
+  border-top: 1px solid #818181;
+}

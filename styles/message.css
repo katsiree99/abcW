@@ -1,0 +1,21 @@
+.tag-type {
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+
+.is-receive {
+    background-color: #61C36C;
+}
+
+.is-payment{
+    background-color: #EB4C64;
+}
+.is-otp{
+    background-color: #2196f3;
+}
+.is-contact{
+  background-color: #EAC243;
+
+}
